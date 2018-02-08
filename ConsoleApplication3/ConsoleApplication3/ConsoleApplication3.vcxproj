@@ -80,6 +80,22 @@
   <ItemGroup>
     <None Include="TTTlab2 -2018.doc" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="clockType.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="TTTClass.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="clockTypeImp.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="testClockClass.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="tictactoe.cpp" />
+    <ClCompile Include="TTTClass.cpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
