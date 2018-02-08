@@ -7,7 +7,7 @@ public:
 	//Default constructor
 	//A TTTCIass object should be constructed with all cells blank
 
-	void display();
+	void display(char &box);
 	//The class should have the ability to display its game board on the screen 
 	//All I/O will be from the keyboard and to the monitor.
 
@@ -15,7 +15,7 @@ public:
 	//Postcondition: Returns true if this time is equal to 
 	//               otherClock; otherwise, returns false.
 
-	void move();
+	void move(char &box);
 	//include member functions Move() to get a player’s move and update the screen,
 
 	//Function to increment the time by one hour.
@@ -23,20 +23,20 @@ public:
 	//               If the before-increment time is 
 	//               23:45:53, the time is reset to 00:45:53.
 
-	void winner();
+	void winner(char &box);
 	//and Winner( ) that returns a code indicating who has won, if anyone.
 	//Output should include a horizontal win, a vertical win, a diagonal win and a draw(no one wins).
 
 	//  "
 	//  "
 
-	void filler(int &a,
-		int &b,
-		int &c,
-		int &d);
+	void filler(int a,
+		int b,
+		int c,
+		int d);
 
 private:
-	int box[3][3];
+	char box[3][3];
 
 
 

@@ -5,22 +5,26 @@
 
 using namespace std;
 
-void tictactoe::display() {
+void tictactoe::display(char &box) {
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			cout << box[i][j];
+		}
+	}
+}
+
+void tictactoe::move(char &box) {
 	;
 }
 
-void tictactoe::move() {
+void tictactoe::winner(char &box) {
 	;
 }
 
-void tictactoe::winner() {
-	;
-}
-
-void tictactoe::filler(int &a, int &b, int &c, int &d) {
+void tictactoe::filler(int a, int b, int c, int d) {
 	;
 }
 
 tictactoe::tictactoe() {
-	box[3][3] = { 0 };
+	box[3][3] = { ' ' };
 }
