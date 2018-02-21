@@ -8,5 +8,11 @@ using namespace std;
 int main()
 {
 	tictactoe game;
+	game.display();
+	while (!game.complete) {
+		game.move();
+		game.display();
+		game.winner();
+	}
 	return 0;
 }

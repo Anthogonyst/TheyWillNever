@@ -90,7 +90,6 @@
     <ClCompile Include="clockTypeImp.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="mycringyoldways.cpp" />
     <ClCompile Include="testClockClass.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">1</ExcludedFromBuild>
     </ClCompile>

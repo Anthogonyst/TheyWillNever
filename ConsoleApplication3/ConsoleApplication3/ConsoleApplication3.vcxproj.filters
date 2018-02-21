@@ -40,8 +40,5 @@
     <ClCompile Include="tictactoe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="mycringyoldways.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

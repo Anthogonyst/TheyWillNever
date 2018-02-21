@@ -1,72 +1,34 @@
-//clockType.h, the specification file for the class clockType
+//TTTClass.h, the specification file for the class tictactoe
 
 class tictactoe
 {
 public:
 	tictactoe();
-	//Default constructor
-	//A TTTCIass object should be constructed with all cells blank
+	// Default constructor
+	// A TTTCIass object should be constructed with all cells blank
 
-	void display(char &box);
-	//The class should have the ability to display its game board on the screen 
-	//All I/O will be from the keyboard and to the monitor.
+	void display();
+	// Function to display the game board.
+	// Output is a user friendly picture to console
 
-	//Function to compare the two times.
-	//Postcondition: Returns true if this time is equal to 
-	//               otherClock; otherwise, returns false.
+	void move();
+	// Player I/O to play the game
 
-	void move(char &box);
-	//include member functions Move() to get a player’s move and update the screen,
+	// Plays a turn based on user input
+	// Postcondition: Fills one value of the gameboard
 
-	//Function to increment the time by one hour.
-	//Postcondition: The time is incremented by one hour.
-	//               If the before-increment time is 
-	//               23:45:53, the time is reset to 00:45:53.
+	void winner();
+	// Checks the game state to see if anyone won.
 
-	void winner(char &box);
-	//and Winner( ) that returns a code indicating who has won, if anyone.
-	//Output should include a horizontal win, a vertical win, a diagonal win and a draw(no one wins).
+	// Postcondition: If a winner is declared, the game is over.
 
-	//  "
-	//  "
 
-	void filler(int a,
-		int b,
-		int c,
-		int d);
+	// Tells the core program when the game is done.
+	bool complete = 0;
 
 private:
+	// Gameboard data
 	char box[3][3];
-
-
-
-	/*
-	A run from a client program using the TTTC1ass may have output similar to:
-
-	[  ] [  ][  ]
-	[  ] [  ][  ]
-	[  ] [  ][  ]
-
-	Player X
-	Enter row to move (1, 2, 3): 2
-	Enter column to move (1, 2, 3): 2
-	[  ][   ][  ]
-	[  ][ X ][  ]
-	[  ][   ][  ]
-
-	Player 0
-	Enter row to move (1, 2, 3): 1
-	Enter column to move (1, 2, 3): 1
-	[ O ][   ][   ]
-	[   ][ X ][   ]
-	[   ][   ][   ]
-
-	• • • •
-
-	[ O ][   ][ X ]
-	[ X ][ X ][ O ]
-	[ X ][   ][ O ]
-	Winner is X - Diagonal.
-
-	*/
+	// Saves which player's turn
+	char player;
 };
