@@ -1,5 +1,9 @@
+// Implementation file for Gas Station.h
+
 #include<iostream>
-#include<conio.h>
+#include<iomanip> // For forced decimal place
+#include<conio.h> // For keyboard detection
+#include<Windows.h> // For time function
 #include "Gas Station.h"
 
 using namespace std;
@@ -49,19 +53,48 @@ void Gasoline::reset() {
 
 // Pumps gas until stopped
 void Gasoline::pump() {
-	bool pumping = 1;
-	
-	while (_getch()) {
+	char c = '0';
+
+	// Outputs instructions to console
+	cout << "Ready to start gas pump when you hit the 's' button. Pause pumping with the 'p' button." << endl;
+	while (c != 's')
+		if (_kbhit())
+			c = _getch();
+
+	// Pumps gas until 'p' key is hit
+	while (c != 'p') {
+		// Try to clear screen but may fail on different OS
+		// Suggestion: use \b instead
+		try {
+			system("CLS");
+		}
+		catch (...) {
+			cout << endl;
+		}
+
+		// Increments and prints gallons
 		gallons += 0.1;
-		// cin.get -> pumping = 0;
-		// wants screen cleared per display of .1 and bill; better to use \b
 		cout << "Gallons of gasoline pumped: " << gallons << endl;
+
+		// "Slows" program down so it doesn't spit hundreds of gallons
+		Sleep(100);
+
+		// If keyboard is hit, records character entered
+		if (_kbhit())
+			c = _getch();
 	}
+
+	// Outputs gas sale to console
+	cout << endl << "Your total bill is $";
+	receipt();
+	cout << " for " << gallons << " gallons." << endl;
 }
+
 // Pumps gas until desired price is reached
 void Gasoline::pump(double input) {
 	gallons = input / cost;
 
+	// Outputs gas sale to console
 	cout << endl << "Your total bill is $";
 	receipt();
 	cout << " for " << gallons << " gallons." << endl;
