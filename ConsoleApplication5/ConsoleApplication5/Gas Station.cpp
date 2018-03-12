@@ -1,7 +1,7 @@
 // Implementation file for Gas Station.h
 
 #include<iostream>
-#include<iomanip> // For forced decimal place
+#include<cmath> // To force two decimals tops
 #include<conio.h> // For keyboard detection
 #include<Windows.h> // For time function
 #include "Gas Station.h"
@@ -31,7 +31,8 @@ void Gasoline::capacity() {
 
 // Outputs total cost of gas in car to console
 void Gasoline::receipt() {
-	bill = gallons * cost;
+	// Drops third decimal place if present
+	bill = ceil(gallons * cost * 100) / 100;
 	cout << bill;
 }
 
@@ -63,10 +64,10 @@ void Gasoline::pump() {
 
 	// Pumps gas until 'p' key is hit
 	while (c != 'p') {
-		// Try to clear screen but may fail on different OS
-		// Suggestion: use \b instead
+		// Attempt to clear screen; may not work due to OS dependency; perhaps use \b instead?
 		try {
-			system("CLS");
+			system("cls");
+			cout << endl;
 		}
 		catch (...) {
 			cout << endl;
