@@ -81,9 +81,9 @@
     <ClInclude Include="Gas Station.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\..\Downloads\story.cpp" />
     <ClCompile Include="Gas Station.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="nethack.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,9 +4,12 @@
 #include<cmath> // To force two decimals tops
 #include<conio.h> // For keyboard detection
 #include<Windows.h> // For time function
+#include<string> // For log function
+#include<fstream> // For log function
 #include "Gas Station.h"
 
 using namespace std;
+double Gasoline::tank = 0;
 
 // Default price constructor
 Gasoline::Gasoline() {
@@ -52,6 +55,8 @@ void Gasoline::reset() {
 	bill = 0;
 }
 
+void clearscreen();
+
 // Pumps gas until stopped
 void Gasoline::pump() {
 	char c = '0';
@@ -63,18 +68,13 @@ void Gasoline::pump() {
 			c = _getch();
 
 	// Pumps gas until 'p' key is hit
-	while (c != 'p') {
-		// Attempt to clear screen; may not work due to OS dependency; perhaps use \b instead?
-		try {
-			system("cls");
-			cout << endl;
-		}
-		catch (...) {
-			cout << endl;
-		}
+	while (c != 'p' && (tank > 0)) {
+		// Clears the screen
+		clearscreen();
 
 		// Increments and prints gallons
 		gallons += 0.1;
+		tank -= 0.1;
 		cout << "Gallons of gasoline pumped: " << gallons << endl;
 
 		// "Slows" program down so it doesn't spit hundreds of gallons
@@ -89,19 +89,85 @@ void Gasoline::pump() {
 	cout << endl << "Your total bill is $";
 	receipt();
 	cout << " for " << gallons << " gallons." << endl;
+
+	// Refills the tank if empty
+	refill_tank();
 }
 
 // Pumps gas until desired price is reached
 void Gasoline::pump(double input) {
-	gallons = input / cost;
+	// Checks if main tank has enough gas
+	if ((input / cost) > show_tank())
+		gallons = show_tank();
+	else gallons = input / cost;
 
 	// Outputs gas sale to console
 	cout << endl << "Your total bill is $";
 	receipt();
 	cout << " for " << gallons << " gallons." << endl;
+
+	// Refills the tank if empty
+	refill_tank();
 }
 
 // Outputs sales revenue to console
 void Gasoline::sales() {
 	cout << revenue;
+}
+
+// Adds gas to main tank
+void Gasoline::fill_tank(double fill) {
+	tank += fill;
+}
+
+// Returns total gas in main tank
+double Gasoline::show_tank() {
+	return tank;
+}
+
+// Clears the screen
+void inline clearscreen() {
+	// Attempt to clear screen; may not work due to OS dependency; perhaps use \b instead?
+	try {
+		system("cls");
+		cout << endl;
+	}
+	catch (...) {
+		cout << endl;
+	}
+}
+
+// Refills tank when it runs out automatically
+void Gasoline::refill_tank() {
+	if (tank == 0) {
+		fill_tank(100);
+		cout << "Please wait while we refill the tank..." << endl;
+	}
+}
+
+// Logs activity to a personal file
+void Gasoline::log() {
+	fstream file;
+
+	// Prompts user for file name
+	cout << "Initializing..." << endl << "Hello, manager! Where would you like to keep the log file? ";
+	cin >> logname;
+	cout << endl << "Preparing..." << endl;
+
+	// Appends file extension
+	logname += ".txt";
+
+	// Tries to open file
+	file.open(logname);
+	if (file.fail()) {
+		cout << "Error writing to file";
+		return;
+	}
+
+	// Goes to the end of the file
+	while (!file.eof())
+		file.ignore();
+
+	// Writes at end of file
+	file >> "\nWhat is even";
 }

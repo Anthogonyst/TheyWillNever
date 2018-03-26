@@ -9,6 +9,9 @@ int main() {
 	Gasoline pump_self(3.05);
 	char service = 'a';
 	bool chosen = 0;
+	pump_full.fill_tank(80);
+
+	pump_full.log();
 
 	// Prompt
 	cout << "Welcome to the Red Rocket gas station!" << endl
@@ -28,7 +31,7 @@ int main() {
 	}
 	else { // service == 'f'
 		cout << endl << "Hello, good morning. This will only take a moment..." << endl;
-		pump_full.pump(400);
+		pump_full.pump(200);
 	}
 	
 	cout << endl << "Have a good day!" << endl;
