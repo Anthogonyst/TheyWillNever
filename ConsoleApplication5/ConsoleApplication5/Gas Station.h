@@ -43,12 +43,12 @@ public:
 
 	// Logs activity to a personal file
 	static void log();
-
+	
 private:
 	double cost;
 	double gallons;
 	double bill;
 	double revenue;
 	static double tank;
-	static string logname[20];
+	static char logname[100];
 };

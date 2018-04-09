@@ -81,7 +81,6 @@
     <ClInclude Include="Gas Station.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\Downloads\story.cpp" />
     <ClCompile Include="Gas Station.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>

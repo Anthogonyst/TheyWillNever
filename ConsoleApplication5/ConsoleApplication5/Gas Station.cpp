@@ -4,7 +4,7 @@
 #include<cmath> // To force two decimals tops
 #include<conio.h> // For keyboard detection
 #include<Windows.h> // For time function
-#include<string> // For log function
+#include<cstring> // For log function
 #include<fstream> // For log function
 #include "Gas Station.h"
 
@@ -154,9 +154,6 @@ void Gasoline::log() {
 	cin >> logname;
 	cout << endl << "Preparing..." << endl;
 
-	// Appends file extension
-	logname += ".txt";
-
 	// Tries to open file
 	file.open(logname);
 	if (file.fail()) {
@@ -169,5 +166,5 @@ void Gasoline::log() {
 		file.ignore();
 
 	// Writes at end of file
-	file >> "\nWhat is even";
+	file << "\nWhat is even";
 }
