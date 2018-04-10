@@ -1,0 +1,13 @@
+
+Number of gallons sold:  
+
+Number of gallons remaining in main tank: 80
+Number of gallons sold:  
+
+Number of gallons remaining in main tank: 80
+Number of gallons sold:  
+
+Number of gallons remaining in main tank: 80
+Number of gallons sold:  
+
+Number of gallons remaining in main tank: 80

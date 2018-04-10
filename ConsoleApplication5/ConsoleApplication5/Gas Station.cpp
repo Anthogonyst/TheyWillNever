@@ -4,7 +4,7 @@
 #include<cmath> // To force two decimals tops
 #include<conio.h> // For keyboard detection
 #include<Windows.h> // For time function
-#include<cstring> // For log function
+#include<string> // For log function
 #include<fstream> // For log function
 #include "Gas Station.h"
 
@@ -92,6 +92,8 @@ void Gasoline::pump() {
 
 	// Refills the tank if empty
 	refill_tank();
+
+	log(0);
 }
 
 // Pumps gas until desired price is reached
@@ -108,6 +110,8 @@ void Gasoline::pump(double input) {
 
 	// Refills the tank if empty
 	refill_tank();
+
+	log(0);
 }
 
 // Outputs sales revenue to console
@@ -125,6 +129,14 @@ double Gasoline::show_tank() {
 	return tank;
 }
 
+// Refills tank when it runs out automatically
+void Gasoline::refill_tank() {
+	if (tank == 0) {
+		fill_tank(100);
+		cout << "Please wait while we refill the tank..." << endl;
+	}
+}
+
 // Clears the screen
 void inline clearscreen() {
 	// Attempt to clear screen; may not work due to OS dependency; perhaps use \b instead?
@@ -137,34 +149,32 @@ void inline clearscreen() {
 	}
 }
 
-// Refills tank when it runs out automatically
-void Gasoline::refill_tank() {
-	if (tank == 0) {
-		fill_tank(100);
-		cout << "Please wait while we refill the tank..." << endl;
-	}
-}
-
 // Logs activity to a personal file
-void Gasoline::log() {
-	fstream file;
+void Gasoline::log(bool init) {
+	ofstream file;
+	
+	if (init) {
+		string logname;
 
-	// Prompts user for file name
-	cout << "Initializing..." << endl << "Hello, manager! Where would you like to keep the log file? ";
-	cin >> logname;
-	cout << endl << "Preparing..." << endl;
+		// Prompts user for file name
+		cout << "Initializing..." << endl << "Hello, manager! Where would you like to keep the log file? ";
+		cin >> logname;
+		cout << endl << "Preparing..." << endl;
 
-	// Tries to open file
-	file.open(logname);
+		// Appends appropriate file extension
+		logname.append(".txt");
+		logfile = logname;
+		cout << "Writing to " << logfile << endl;
+	}
+
+	// Tries to open file and puts cursor at end of file
+	file.open(logfile, ios::app);
 	if (file.fail()) {
-		cout << "Error writing to file";
+		cout << "Error writing to file..." << endl;
 		return;
 	}
 
-	// Goes to the end of the file
-	while (!file.eof())
-		file.ignore();
-
 	// Writes at end of file
-	file << "\nWhat is even";
+	file << "\nNumber of gallons sold: " << ' ' << endl; // Incomplete
+	file << "\nNumber of gallons remaining in main tank: " << show_tank();
 }

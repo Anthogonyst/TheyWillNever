@@ -1,3 +1,8 @@
+// Anthony Arroyo
+// Computer Science 211
+// Professor Hayes
+// April 9, 2018
+
 #include<iostream>
 #include "Gas Station.h"
 
@@ -11,7 +16,7 @@ int main() {
 	bool chosen = 0;
 	pump_full.fill_tank(80);
 
-	pump_full.log();
+	pump_full.log(1);
 
 	// Prompt
 	cout << "Welcome to the Red Rocket gas station!" << endl
@@ -34,6 +39,8 @@ int main() {
 		pump_full.pump(200);
 	}
 	
+	pump_full.log(0);
+	pump_self.log(0);
 	cout << endl << "Have a good day!" << endl;
 
 	return 0;

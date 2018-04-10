@@ -40,20 +40,18 @@ int main() {
 	compare(s, 's', n, 'n');
 	value(s, 's');
 	value(n, 'n');
-
-	/*
-	cout << "distance between s and n is: " << distance(s, n);
-	cout << "distance between k and n is: " << distance(k, n);
-	cout << "distance between s and k is: " << distance(s, k);
-	*/
+	cout << endl;
 
 	point z(0, 0);
 
-	/*
+	cout << "distance between s and n is: " << distance(s, n) << endl;
+	cout << "distance between k and n is: " << distance(k, n) << endl;
+	cout << "distance between s and k is: " << distance(s, k) << endl;
+
 	cout << "middle between s and n is: " << middle(s, n);
 	cout << "middle between k and n is: " << middle(k, n);
 	cout << "middle between s and k is: " << middle(s, k);
-	*/
+
 }
 
 void value(point p, char c) {
