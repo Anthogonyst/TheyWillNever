@@ -47,6 +47,7 @@ public:
 	// CONSTANT MEMBER FUNCTIONS
 	double get_x() const { return x; }
 	double get_y() const { return y; }
+	friend std::istream& operator >>(std::istream& ins, point& target);
 private:
 	double x, y; // x and y coordinates of this point
 };

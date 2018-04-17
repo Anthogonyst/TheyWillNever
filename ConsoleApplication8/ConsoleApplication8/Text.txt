@@ -1,0 +1,16 @@
+/*
+Lab 4 - Contact Database
+
+Write a program that implements a database system. The program will use an array of type contact to store
+contact information (maximum size 100). The program should be written using 2 class files. One class will
+implement a contact object and the second class will implement the database and include the main method.
+
+The contact class should include instance variables to store the contact's first name, last name, phone
+number, and email address. Add appropriate constructors, accessor and mutator methods, an input method,
+and overloaded << function. Your database class should include a method to display a menu that allows the
+client to add a contact, display all contacts, search for a contact by phone number, and delete a contact.
+You may add a method to edit a contact for extra credit. 
+
+Input the existing contact information for 10 contacts into the database's array instance variable from a
+file (use an initialize method).
+*/

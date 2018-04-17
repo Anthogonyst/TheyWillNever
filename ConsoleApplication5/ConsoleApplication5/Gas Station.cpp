@@ -108,6 +108,9 @@ void Gasoline::pump(double input) {
 	receipt();
 	cout << " for " << gallons << " gallons." << endl;
 
+	// Adjusts reading on main fuel tank
+	tank -= gallons;
+
 	// Refills the tank if empty
 	refill_tank();
 
@@ -152,7 +155,7 @@ void inline clearscreen() {
 // Logs activity to a personal file
 void Gasoline::log(bool init) {
 	ofstream file;
-	
+
 	if (init) {
 		string logname;
 
@@ -175,6 +178,9 @@ void Gasoline::log(bool init) {
 	}
 
 	// Writes at end of file
-	file << "\nNumber of gallons sold: " << ' ' << endl; // Incomplete
-	file << "\nNumber of gallons remaining in main tank: " << show_tank();
+	if (!init) {
+		file << "\nNumber of gallons sold: " << gallons;
+		file << "\nNumber of gallons remaining in main tank: " << show_tank() << endl;
+
+	}
 }

@@ -46,6 +46,10 @@ int rotations_needed(point p)
 	return answer;
 }
 
+std::istream& operator >>(std::istream& ins, point& target) {
+	ins >> target.x >> target.y;
+	return ins;
+}
 
 double distance(const point& p1, const point& p2)
 // Library facilities used: cmath 

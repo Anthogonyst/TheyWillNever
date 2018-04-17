@@ -1,7 +1,7 @@
 // Anthony Arroyo
 // Computer Science 211
 // Professor Hayes
-// April 9, 2018
+// April 16, 2018
 
 #include<iostream>
 #include "Gas Station.h"
@@ -12,11 +12,13 @@ int main() {
 	// Initializes full service pump and "discounted" self service pump
 	Gasoline pump_full;
 	Gasoline pump_self(3.05);
+	// Initializes main fuel tank
+	pump_full.fill_tank(80);
+	// Initializes log file
+	pump_full.log(1);
+	// Misc data initialization
 	char service = 'a';
 	bool chosen = 0;
-	pump_full.fill_tank(80);
-
-	pump_full.log(1);
 
 	// Prompt
 	cout << "Welcome to the Red Rocket gas station!" << endl
@@ -39,8 +41,6 @@ int main() {
 		pump_full.pump(200);
 	}
 	
-	pump_full.log(0);
-	pump_self.log(0);
 	cout << endl << "Have a good day!" << endl;
 
 	return 0;

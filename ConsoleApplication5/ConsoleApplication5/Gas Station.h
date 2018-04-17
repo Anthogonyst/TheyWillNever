@@ -43,8 +43,8 @@ public:
 	static void refill_tank();
 
 	// Logs activity to a personal file
-	static void log(bool);
-	
+	void log(bool);
+
 private:
 	double cost;
 	double gallons;

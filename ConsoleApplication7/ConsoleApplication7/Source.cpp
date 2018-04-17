@@ -43,15 +43,15 @@ int main() {
 	cout << endl;
 
 	point z(0, 0);
+	
+	// Incomplete
+	double dist = 0;
+	// dist = distance(s, n);
+	cout << "distance between s and n is: " << dist << endl;
 
-	cout << "distance between s and n is: " << distance(s, n) << endl;
-	cout << "distance between k and n is: " << distance(k, n) << endl;
-	cout << "distance between s and k is: " << distance(s, k) << endl;
-
-	cout << "middle between s and n is: " << middle(s, n);
-	cout << "middle between k and n is: " << middle(k, n);
-	cout << "middle between s and k is: " << middle(s, k);
-
+	// z = z + middle(s, n);
+	cout << "middle between s and n is: " << z;
+	
 }
 
 void value(point p, char c) {
