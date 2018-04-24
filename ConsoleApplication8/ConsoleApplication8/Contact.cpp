@@ -5,43 +5,33 @@
 using namespace std;
 
 Confidant::Confidant() {
-
+	first(0);
+	last(0);
+	phone(0);
+	email(0);
 }
 
 // Input
-void Confidant::save(Confidant &person) {
-	bool valid = 0;
-	std::string data[3];
-	double num;
+void Confidant::save() {
+	std::string data[4];
 
-	std::cout << "Please write the first name, last name, phone number (no dashes), "
+	std::cout << "Please write the first name, last name, phone number, "
 		<< "and email address of the new contact you wish to add. " << std::endl;
 
-	std::cin >> data[0] >> data[1];
+	for (int i = 0; i < 4; i++)
+		std::cin >> data[i];
 
-	while (!valid) {
-		try {
-			std::cin >> num;
-			valid = 1;
-		}
-		catch (...) {
-			std::cout << "Error writing phone number. Try again." << std::endl;
-		}
-	}
-
-	std::cin >> data[2];
-
-	person.first(data[0]);
-	person.last(data[1]);
-	person.phone(num);
-	person.email(data[2]);
+	first(data[0]);
+	last(data[1]);
+	phone(data[2]);
+	email(data[2]);
 
 	return;
 }
 
 // Output
 std::ostream &operator <<(std::ostream &out, Confidant &person) {
-	out << person.get_first() << '\t' << 't';
+	out << "l"; //person.get_first();// << '\t' << person.get_last() << '\t' << person.get_phone() << '\t' << person.get_email();
 
 	return out;
 }
