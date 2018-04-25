@@ -5,14 +5,11 @@
 using namespace std;
 
 Confidant::Confidant() {
-	first(0);
-	last(0);
-	phone(0);
-	email(0);
+	;
 }
 
 // Input
-void Confidant::save() {
+/*void Confidant::save() {
 	std::string data[4];
 
 	std::cout << "Please write the first name, last name, phone number, "
@@ -28,7 +25,7 @@ void Confidant::save() {
 
 	return;
 }
-
+*/
 // Output
 std::ostream &operator <<(std::ostream &out, Confidant &person) {
 	out << "l"; //person.get_first();// << '\t' << person.get_last() << '\t' << person.get_phone() << '\t' << person.get_email();
