@@ -83,7 +83,6 @@
   <ItemGroup>
     <ClCompile Include="Contact.cpp" />
     <ClCompile Include="Database.cpp" />
-    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Contact.h" />

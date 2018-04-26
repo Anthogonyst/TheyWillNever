@@ -1,9 +1,11 @@
 #include<iostream>
 #include<string>
 #include "Contact.h"
+#include "Database.h"
+
+using namespace std;
 
 int main() {
-	Confidant *z;
-	//*z.save();
-	//std::cout << z;
+	initialize_contacts();
+	Confidant z;
 }

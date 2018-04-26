@@ -10,12 +10,13 @@ using namespace std;
 class Data {
 public:
 	void add_contact(const Confidant*);
-	Confidant* send_contacts();
-	Confidant* search_contacts(string);
-	void delete_contact(const Confidant*);
-//	Confidant*& edit_contact(const Confidant*);
+	const Confidant& send_contacts();
+	const Confidant& search_contacts(string*);
+	void delete_contact(const Confidant&);
+//	Confidant* edit_contact(const Confidant&);
 	friend void initialize_contacts();
 private:
 	Confidant database[100];
 	int totalcontacts;
-};
+	Confidant temp;
+} newdatabase;
