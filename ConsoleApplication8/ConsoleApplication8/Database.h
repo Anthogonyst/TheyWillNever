@@ -3,20 +3,23 @@
 //You may add a method to edit a contact for extra credit.
 #include<iostream>
 #include<string>
-#include "Contact.h"
+#include "Contact.cpp"
 
 using namespace std;
 
-class Data {
+class Databoss : public Confidant {
 public:
-	void add_contact(const Confidant*);
-	const Confidant& send_contacts();
-	const Confidant& search_contacts(string*);
-	void delete_contact(const Confidant&);
-//	Confidant* edit_contact(const Confidant&);
-	friend void initialize_contacts();
+	Databoss();
+	~Databoss();
+	void add_contact();
+	void display_contacts();
+	void search_contact(std::string);
+	void delete_contact();
+	//void edit_contact();
+	int num() { return totalcontacts; }
+	friend std::ostream &operator <<(std::ostream &, const Confidant* &);
 private:
-	Confidant database[100];
+	Confidant data[100];
 	int totalcontacts;
-	Confidant temp;
-} newdatabase;
+
+};
