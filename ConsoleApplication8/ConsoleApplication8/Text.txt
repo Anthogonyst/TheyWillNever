@@ -1,16 +1,31 @@
-/*
-Lab 4 - Contact Database
+Last lab! Dynamic Array of Strings
 
-Write a program that implements a database system. The program will use an array of type contact to store
-contact information (maximum size 100). The program should be written using 2 class files. One class will
-implement a contact object and the second class will implement the database and include the main method.
+P475 #6. Dynamic Array of Strings
 
-The contact class should include instance variables to store the contact's first name, last name, phone
-number, and email address. Add appropriate constructors, accessor and mutator methods, an input method,
-and overloaded << function. Your database class should include a method to display a menu that allows the
-client to add a contact, display all contacts, search for a contact by phone number, and delete a contact.
-You may add a method to edit a contact for extra credit. 
+One problem with dynamic arrays is that once the array is created using the new operator the 
+size cannot be changed.  For example, you might want to add or delete entries from the array 
+similar to the behavior of a vector.  This project asks you to create a class called 
+DynamicStringArray that includes member functions that allow it to emulate the behavior of a
+vector of strings.
 
-Input the existing contact information for 10 contacts into the database's array instance variable from a
-file (use an initialize method).
-*/
+The class should have:
+
+		A private member variable called dynamicArray that references a dynamic array of type string.
+		A private member variable called size that holds the number of entries in the array.
+		A default constructor that sets the dynamic array to NULL and sets size to 0.
+		A function that returns size.
+		A function named addEntry that takes a string as input.  The function should create a new 
+	dynamic array one element larger than dynamicArray, copy all elements from dynamicArray into 
+	the new array, add the new string onto the end of the new array, increment size, delete the 
+	old dynamicArray, and then set dynamicArray to the new array.
+		A function named deleteEntry that takes a string as input.  The function should search
+	dynamicArray for the string.  If not found, return false.  If found, create a new dynamic 
+	array one element smaller than dynamicArray.  Copy all elements except the input string 
+	into the new array, delete  dynamicArray, decrement size, and return true.
+		A function named getEntry that takes an integer as input and returns the string at that index
+	in dynamicArray.  Return NULL if the index is out of dynamicArray’s bounds.
+		A copy constructor that makes a copy of the input object’s dynamic array.
+		Overload the assignment operator so that the dynamic array is properly copied to the target object.
+		A destructor that frees up the memory allocated to the dynamic array.
+
+Embed your class in a suitable test program.

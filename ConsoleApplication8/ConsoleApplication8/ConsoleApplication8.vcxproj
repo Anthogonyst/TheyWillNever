@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{64E1027C-411A-4EE7-BC5F-0DB1100180A0}</ProjectGuid>
+    <ProjectGuid>{9BAE718C-0E91-44A1-AD18-2ABD50BF5D0A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>ConsoleApplication8</RootNamespace>
   </PropertyGroup>
@@ -78,15 +78,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="DynaAwry.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DynaAwry.h" />
+  </ItemGroup>
+  <ItemGroup>
     <Text Include="Text.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Contact.cpp" />
-    <ClCompile Include="Database.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Contact.h" />
-    <ClInclude Include="Database.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

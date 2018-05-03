@@ -1,9 +1,0 @@
-/*
-Lab 4 - Contact Database
-
-The contact class should  Add an input method and overloaded << function.
-You may add a method to edit a contact for extra credit. 
-
-Input the existing contact information for 10 contacts into the database's array instance variable from a
-file (use an initialize method).
-*/
