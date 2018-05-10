@@ -5,14 +5,19 @@ using namespace std;
 
 class Awway {
 public:
-	int size;
 	// Constructor
-	Awway() { dynamicArray = 0, size = 0; }
+	Awway();
 	// Accessor
 	int width() { return size; }
+	
+	void addEntry(string);
+	void add(string);
+
+	
 
 
 private:
-	string dynamicArray;
-	const int size = 0;
+	string **dynamicArray;
+	string *dinner;
+	int size;
 };
